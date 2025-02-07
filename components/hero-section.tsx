@@ -15,7 +15,7 @@ export function HeroSection() {
     >
       {/* Hero Heading */}
       <div className="pt-12 pb-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white text-center">
+        <h1 className="text-2xl md:text-3xl font-bold text-white text-center">
           From Southeast Asia to the World, All Yours.
         </h1>
       </div>
@@ -49,39 +49,39 @@ export function HeroSection() {
             </TabsList>
           </Tabs>
 
-          <div className="grid md:grid-cols-4 gap-px bg-gray-200">
-            <div className="bg-white p-4">
-              <label className="text-sm font-medium mb-2 block text-gray-700">City, destination, or hotel name</label>
-              <div className="relative">
+          <div className="flex w-full">
+            <div className="w-full">
+              <label className="text-sm font-medium mb-2 block text-gray-200 ">City, destination, or hotel name</label>
+              <div className=" bg-white p-1 rounded-l-xl">
                 <Building2 className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-                <Input placeholder="Jakarta" className="pl-10 border-gray-200 text-gray-700 placeholder-gray-400" />
+                <Input placeholder="Jakarta" className="pl-10 border-gray-200 text-gray-200 placeholder-gray-400" />
               </div>
             </div>
 
-            <div className="bg-white p-4">
-              <label className="text-sm font-medium mb-2 block text-gray-700">Check-in & Check-out Dates</label>
-              <div className="relative">
+            <div className="w-full">
+              <label className="text-sm font-medium mb-2 block text-gray-200">Check-in & Check-out Dates</label>
+              <div className="relative bg-white p-1">
                 <CalendarDays className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                 <Input
                   placeholder="08 Feb 2025 - 09 Feb 2025"
-                  className="pl-10 border-gray-200 text-gray-700 placeholder-gray-400"
+                  className="pl-10 border-gray-200 text-gray-200 placeholder-gray-400"
                 />
               </div>
             </div>
 
-            <div className="bg-white p-4">
-              <label className="text-sm font-medium mb-2 block text-gray-700">Guests and Rooms</label>
-              <div className="relative">
+            <div className="w-full">
+              <label className="text-sm font-medium mb-2 block text-gray-200">Guests and Rooms</label>
+              <div className="relative bg-white p-1">
                 <Users className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                 <Input
                   placeholder="1 Adult(s), 0 Child, 1 Room"
-                  className="pl-10 border-gray-200 text-gray-700 placeholder-gray-400"
+                  className="pl-10 border-gray-200 text-gray-200 placeholder-gray-400"
                 />
               </div>
             </div>
 
-            <div className="bg-white p-4 flex items-end">
-              <Button className="w-auto px-4 bg-[#FF5E1F] hover:bg-[#FF5E1F]/90">
+            <div className="flex items-end">
+              <Button className="w-auto h-11 px-4 bg-[#FF5E1F] hover:bg-[#FF5E1F]/90 rounded-none rounded-r-xl">
                 <Search className="w-5 h-5" />
               </Button>
             </div>
