@@ -13,7 +13,7 @@ export default function HotelLayout({
         {/* Place children where you want to render a page or nested layout */}
         <div className="min-h-screen">
           <TopNav />
-          <MainNav/>
+          <MainNav textColor={'text-gray-500'}/>
           <main className="bg-slate-100">{children}</main>
         </div>
       </body>

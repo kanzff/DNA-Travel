@@ -11,12 +11,14 @@ import {
 } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
+import Image from 'next/image'
+
 
 const Hotel = () => {
   return (
     <div className='container mx-auto p-4 flex justify-center gap-4'>
       <div className='flex flex-col gap-4'>
-        <Card className="w-[350px]">
+        <Card className="w-[250px]">
           <CardHeader>
             <CardTitle>Price Range</CardTitle>
             <CardDescription>Per room, per night</CardDescription>
@@ -25,7 +27,7 @@ const Hotel = () => {
             
           </CardContent>
         </Card>
-        <Card className="w-[350px]">
+        <Card className="w-[250px]">
           <CardHeader>
             <CardTitle>Popular Filter</CardTitle>
           </CardHeader>
@@ -68,7 +70,7 @@ const Hotel = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="w-[350px]">
+        <Card className="w-[250px]">
           <CardHeader>
             <CardTitle>Promo & Discount</CardTitle>
           </CardHeader>
@@ -102,7 +104,7 @@ const Hotel = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="w-[350px]">
+        <Card className="w-[250px]">
           <CardHeader>
             <CardTitle>Star Rating</CardTitle>
           </CardHeader>
@@ -154,7 +156,7 @@ const Hotel = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="w-[350px]">
+        <Card className="w-[250px]">
           <CardHeader>
             <CardTitle>Popular Facilities</CardTitle>
           </CardHeader>
@@ -189,8 +191,32 @@ const Hotel = () => {
           </CardContent>
         </Card>
       </div>
-      <div>
-        ini list
+      <div className='flex flex-col gap-4'>
+        <Card className="w-[900px] p-0">
+          <CardContent className='flex justify-between p-0'>
+            <div className='w-auto'>
+              <Image
+                className='rounded-l-lg'
+                width={300}
+                height={200}
+                src={'/hotel-1.jpeg'}
+                alt='hotel'
+              />
+            </div>
+            <div className='w-[400px] p-4'>
+              <p className='mb-4 font-bold'>HOtel XVCVC</p>
+              <p>Hotels <span>ini star</span> </p>
+              <p>ini location</p>
+              <p>ini multi tags</p>
+            </div>
+            <div className='w-[200px] flex flex-col justify-end p-4 items-end'>
+              <p className='text-xs'>Value Rate</p>
+              <p>Rp. 39849348</p>
+              <p>some notif</p>
+              <Button className='mt-4'>Select Room</Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )
