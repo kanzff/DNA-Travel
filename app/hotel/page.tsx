@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
+import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
 
 const Hotel = () => {
@@ -24,62 +24,169 @@ const Hotel = () => {
           <CardContent>
             
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
-            <Button>Deploy</Button>
-          </CardFooter>
         </Card>
         <Card className="w-[350px]">
           <CardHeader>
-            <CardTitle>Price Range</CardTitle>
-            <CardDescription>Per room, per night</CardDescription>
+            <CardTitle>Popular Filter</CardTitle>
           </CardHeader>
-          <CardContent>
-            
+          <CardContent className='flex flex-col gap-2'>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Promo Domestik
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                5 Star
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                4 Star
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Pools
+              </label>
+            </div>
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
-            <Button>Deploy</Button>
-          </CardFooter>
         </Card>
         <Card className="w-[350px]">
           <CardHeader>
-            <CardTitle>Price Range</CardTitle>
-            <CardDescription>Per room, per night</CardDescription>
+            <CardTitle>Promo & Discount</CardTitle>
           </CardHeader>
-          <CardContent>
-            
+          <CardContent className='flex flex-col gap-2'>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Promo for You
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Extra Benefit
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Promo Domestik
+              </label>
+            </div>
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
-            <Button>Deploy</Button>
-          </CardFooter>
         </Card>
         <Card className="w-[350px]">
           <CardHeader>
-            <CardTitle>Price Range</CardTitle>
-            <CardDescription>Per room, per night</CardDescription>
+            <CardTitle>Star Rating</CardTitle>
           </CardHeader>
-          <CardContent>
-            
+          <CardContent className='flex flex-col gap-2'>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                1 Star
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                2 Star
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                3 Star
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                4 Star
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                5 Star
+              </label>
+            </div>
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
-            <Button>Deploy</Button>
-          </CardFooter>
         </Card>
         <Card className="w-[350px]">
           <CardHeader>
-            <CardTitle>Price Range</CardTitle>
-            <CardDescription>Per room, per night</CardDescription>
+            <CardTitle>Popular Facilities</CardTitle>
           </CardHeader>
-          <CardContent>
-            
+          <CardContent className='flex flex-col gap-2'>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Pools
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Elevator
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Fitness Center
+              </label>
+            </div>
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
-            <Button>Deploy</Button>
-          </CardFooter>
         </Card>
       </div>
       <div>
