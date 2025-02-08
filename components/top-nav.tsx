@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Globe, ChevronDown } from "lucide-react"
 
-export function TopNav({textColor} : {textColor?: String | undefined}) {
+export function TopNav({textColor, lightMode} : {textColor?: String | undefined, lightMode?: Boolean | undefined}) {
   return (
     <nav className="">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
@@ -47,11 +47,13 @@ export function TopNav({textColor} : {textColor?: String | undefined}) {
             Bookings
           </Link>
 
-          <Button variant="ghost" className={`${textColor} hover:text-gray-200`}>
-            Log In
-          </Button>
+          <div>
+            <Button variant="ghost" className={`${textColor} hover:text-gray-200 border mr-1 ${lightMode ? 'border-sky-500' : ''}`}>
+              Log In
+            </Button>
 
-          <Button className="bg-secondary hover:bg-secondary/90 textColor">Register</Button>
+            <Button className="bg-secondary hover:bg-secondary/90 textColor bg-sky-500">Register</Button>
+          </div>
         </div>
       </div>
     </nav>

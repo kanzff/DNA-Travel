@@ -232,9 +232,9 @@ const Hotel = () => {
             </div>
             <div className='w-[200px] flex flex-col justify-end p-4 items-end'>
               <p className='text-xs'>Value Rate</p>
-              <p>Rp. 39849348</p>
+              <p className='text-orange-500'>Rp. 39.849.348</p>
               <p>some notif</p>
-              <Button className='mt-4'>Select Room</Button>
+              <Button className='mt-3 bg-orange-600 '>Select Room</Button>
             </div>
           </CardContent>
         </Card>
