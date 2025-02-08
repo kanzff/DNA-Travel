@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { MainNav } from "@/components/main-nav"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Building2, CalendarDays, Users, Search } from "lucide-react"
+import { HeroNav } from "./hero-nav"
 
 export function HeroSection() {
   return (
     <div
       className="relative min-h-[600px] bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('/travel-landing.jpg')",
-      }}
+    //   style={{
+    //     backgroundImage:
+    //       "url('/travel-landing.jpg')",
+    //   }}
     >
       {/* Hero Heading */}
       <div className="pt-12 pb-4">
@@ -19,7 +19,7 @@ export function HeroSection() {
           From Southeast Asia to the World, All Yours.
         </h1>
       </div>
-      <MainNav />
+      <HeroNav />
       <div className="container mx-auto px-4">
         <div className="border-b border-white opacity-50 max-w-5xl mx-auto"></div>
       </div>

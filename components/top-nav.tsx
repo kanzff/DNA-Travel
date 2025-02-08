@@ -5,7 +5,7 @@ import { Globe, ChevronDown } from "lucide-react"
 
 export function TopNav() {
   return (
-    <nav className="bg-primary">
+    <nav className="">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center">
           {/* <Image
