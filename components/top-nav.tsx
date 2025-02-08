@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Globe, ChevronDown } from "lucide-react"
 
-export function TopNav() {
+export function TopNav({textColor} : {textColor?: String | undefined}) {
   return (
     <nav className="">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
@@ -18,7 +18,7 @@ export function TopNav() {
         </Link>
 
         <div className="flex items-center gap-6">
-          <div className="flex items-center text-white">
+          <div className={`flex items-center ${textColor}`}>
             <Globe className="w-4 h-4 mr-1" />
             <span className="mr-1">EN</span>
             <span className="mx-1">|</span>
@@ -26,32 +26,32 @@ export function TopNav() {
             <ChevronDown className="w-4 h-4" />
           </div>
 
-          <Link href="/deals" className="text-white hover:text-gray-200">
+          <Link href="/deals" className={`${textColor} hover:text-gray-200`}>
             Deals
           </Link>
 
-          <div className="flex items-center gap-2 text-white">
+          <div className={`flex items-center gap-2 ${textColor}`}>
             <span>Support</span>
             <ChevronDown className="w-4 h-4" />
           </div>
 
-          <Link href="/partnership" className="text-white hover:text-gray-200">
+          <Link href="/partnership" className={`${textColor} hover:text-gray-200`}>
             Partnership
           </Link>
 
-          <Link href="/corporates" className="text-white hover:text-gray-200">
+          <Link href="/corporates" className={`${textColor} hover:text-gray-200`}>
             For Corporates
           </Link>
 
-          <Link href="/bookings" className="text-white hover:text-gray-200">
+          <Link href="/bookings" className={`${textColor} hover:text-gray-200`}>
             Bookings
           </Link>
 
-          <Button variant="ghost" className="text-white hover:text-gray-200">
+          <Button variant="ghost" className={`${textColor} hover:text-gray-200`}>
             Log In
           </Button>
 
-          <Button className="bg-secondary hover:bg-secondary/90 text-white">Register</Button>
+          <Button className="bg-secondary hover:bg-secondary/90 textColor">Register</Button>
         </div>
       </div>
     </nav>

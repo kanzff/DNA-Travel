@@ -12,8 +12,8 @@ export default function Home() {
                   "url('/travel-landing.jpg')",
               }}
         >
-            <TopNav />
-            <MainNav/>
+            <TopNav textColor={'text-white'} />
+            <MainNav textColor={'text-white'}/>
             <HeroSection />
         </div>
       <PromotionSection />
