@@ -196,14 +196,35 @@ const Hotel = () => {
           <CardContent className='flex justify-between p-0'>
             <div className='w-auto'>
               <Image
-                className='rounded-l-lg'
-                width={300}
+                className='rounded-tl-lg mb-0.5'
+                width={309}
                 height={200}
                 src={'/hotel-1.jpeg'}
                 alt='hotel'
               />
+              <div className='flex gap-0.5'>
+                <Image
+                  className='rounded-bl-lg'
+                  width={100}
+                  height={75}
+                  src={'/hotel-extra-1.jpeg'}
+                  alt='hotel'
+                />
+                <Image
+                  width={100}
+                  height={75}
+                  src={'/hotel-extra-2.jpeg'}
+                  alt='hotel'
+                />
+                <Image
+                  width={100}
+                  height={75}
+                  src={'/hotel-extra-3.jpeg'}
+                  alt='hotel'
+                />
+              </div>
             </div>
-            <div className='w-[400px] p-4'>
+            <div className='w-[400px] p-4 border-r-2'>
               <p className='mb-4 font-bold'>HOtel XVCVC</p>
               <p>Hotels <span>ini star</span> </p>
               <p>ini location</p>
