@@ -3,6 +3,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 
+import { useSearchParams } from 'next/navigation'
+
 import {
   Card,
   CardContent,
@@ -22,6 +24,9 @@ import { hotels } from '../../dummy/hotels'
 import HotelCard from './hotel-card'
 
 const Hotel = () => {
+  const searchParams = useSearchParams()
+  const region = searchParams.get('region')
+
   const [filters, setFilters] = useState({
     star: [],
     rating: [],
@@ -29,6 +34,8 @@ const Hotel = () => {
     minPrice: "",
     maxPrice: ""
   });
+
+  const hotelsByRegion = hotels.filter(hotel => hotel.city === region)
 
   useEffect(() => {
     console.log('ini filt', filters)
@@ -52,7 +59,7 @@ const Hotel = () => {
   };
 
   // Filter hotels based on selected filters
-  const filteredHotels = hotels.filter((hotel) => {
+  const filteredHotels = hotelsByRegion.filter((hotel) => {
     const matchesStar = filters.star.length
       ? filters.star.includes(hotel.star.toString())
       : true;

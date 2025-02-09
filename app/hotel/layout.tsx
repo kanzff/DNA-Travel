@@ -14,7 +14,6 @@ export default function HotelLayout({
 }) {
   const searchParams = useSearchParams()
   const region = searchParams.get('region')
-  console.log(region)
 
   return (
     <html lang="en" suppressHydrationWarning>

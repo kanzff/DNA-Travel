@@ -43,15 +43,15 @@ const LandingSearch = () => {
   const regions = [
     {
       label: 'Jakarta',
-      value: 'jakarta'
+      value: 'Jakarta'
     },
     {
       label: 'Bandung',
-      value: 'bandung'
+      value: 'Bandung'
     },
     {
       label: 'Malang',
-      value: 'malang'
+      value: 'Malang'
     }
   ]
 
