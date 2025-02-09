@@ -35,7 +35,7 @@ const MainSearch = ({ region }: { region?: string | null }) => {
   })
   const [open, setOpen] = React.useState(false)
   const [openRoom, setOpenRoom] = React.useState(false)
-  const [value, setValue] = React.useState<String>("")
+  const [value, setValue] = React.useState<string>("")
   const [roomValue, setRoomValue] = React.useState({
     adult: 1,
     children: 0,

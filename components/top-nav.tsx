@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Globe, ChevronDown, User } from "lucide-react"
 
-export function TopNav({textColor, lightMode} : {textColor?: String | undefined, lightMode?: Boolean | undefined}) {
+export function TopNav({textColor, lightMode} : {textColor?: string | undefined, lightMode?: boolean | undefined}) {
   return (
     <nav className="">
       <div className="container mx-auto px-4 flex items-center justify-center gap-24 h-16">

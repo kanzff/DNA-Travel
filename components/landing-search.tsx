@@ -33,7 +33,7 @@ const LandingSearch = () => {
   })
   const [open, setOpen] = React.useState(false)
   const [openRoom, setOpenRoom] = React.useState(false)
-  const [value, setValue] = React.useState<String>("Jakarta")
+  const [value, setValue] = React.useState<string>("Jakarta")
   const [roomValue, setRoomValue] = React.useState({
     adult: 1,
     children: 0,

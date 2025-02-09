@@ -1,7 +1,7 @@
 import Link from "next/link"
 import {ChevronDown } from "lucide-react"
 
-export function MainNav({textColor} : {textColor?: String | undefined}) {
+export function MainNav({textColor} : {textColor?: string | undefined}) {
   return (
     <nav className="bg-transparent">
       <div className="container mx-auto px-4">
