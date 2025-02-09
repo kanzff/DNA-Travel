@@ -44,7 +44,7 @@ const MainSearch = ({ region }: { region?: string | null }) => {
 
   useEffect(() => {
     if (!!region) setValue(region)
-  }, [])
+  }, [region])
   
 
   const regions = [
