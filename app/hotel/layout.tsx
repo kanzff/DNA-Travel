@@ -5,6 +5,8 @@ import MainSearch from "@/components/main-search"
 import { TopNav } from "@/components/top-nav"
 
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from "react";
+
 
 
 export default function HotelLayout({
@@ -16,21 +18,23 @@ export default function HotelLayout({
   const region = searchParams.get('region')
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        {/* Layout UI */}
-        {/* Place children where you want to render a page or nested layout */}
-        <div className="min-h-screen bg-slate-100">
-          <div className="bg-white">
-            <TopNav lightMode={true} />
-            <MainNav textColor={'text-gray-500'}/>
-            <div className="p-6 max-w-5xl mx-auto">
-              <MainSearch region={region}/>
+    <Suspense fallback={<div>Loading...</div>}>
+      <html lang="en" suppressHydrationWarning>
+        <body>
+          {/* Layout UI */}
+          {/* Place children where you want to render a page or nested layout */}
+          <div className="min-h-screen bg-slate-100">
+            <div className="bg-white">
+              <TopNav lightMode={true} />
+              <MainNav textColor={'text-gray-500'}/>
+              <div className="p-6 max-w-5xl mx-auto">
+                <MainSearch region={region}/>
+              </div>
             </div>
+            <main >{children}</main>
           </div>
-          <main >{children}</main>
-        </div>
-      </body>
-    </html>
+        </body>
+      </html>
+    </Suspense>
   )
 }
