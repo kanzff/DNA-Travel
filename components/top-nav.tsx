@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Globe, ChevronDown } from "lucide-react"
+import { Globe, ChevronDown, User } from "lucide-react"
 
 export function TopNav({textColor, lightMode} : {textColor?: String | undefined, lightMode?: Boolean | undefined}) {
   return (
@@ -48,12 +48,15 @@ export function TopNav({textColor, lightMode} : {textColor?: String | undefined,
             Bookings
           </Link>
 
-          <div>
-            <Button variant="ghost" className={`${textColor} hover:text-gray-200 border mr-1 ${lightMode ? 'border-sky-500' : ''}`}>
-              Log In
+          <div className="flex">
+            <Button variant="ghost" className={`${textColor} px-2 hover:text-white ${lightMode ? 'hover:bg-slate-200 hover:text-black' : 'hover:bg-sky-950'} border mr-1 ${lightMode ? 'border-sky-500' : ''}`}>
+              <div className="flex items-center gap-2">
+                <User/>
+                <p>Log In</p>
+              </div>
             </Button>
 
-            <Button className="bg-secondary hover:bg-secondary/90 textColor bg-sky-500">Register</Button>
+            <Button className="bg-secondary hover:text-white hover:bg-sky-600 bg-sky-500">Register</Button>
           </div>
         </div>
       </div>

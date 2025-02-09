@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card"
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-import { Star } from 'lucide-react'
+import { Star, Hotel, MapPin } from 'lucide-react'
 
 
 const HotelCard = ({hotel}) => {
@@ -53,12 +53,18 @@ const HotelCard = ({hotel}) => {
             <p className='text-sky-500 font-semibold '>{`${hotel.rating}`}<span className='ml-1 text-gray-500 font-normal text-sm'>{`(4,9k reviews)`}</span></p>
           </div>
           <div className='flex items-center'>
-            <p className='mr-1'>{hotel.star}</p>
+            <div className='flex bg-sky-100 px-1  gap-1 rounded mr-2'>
+              <Hotel className='w-[16px] text-sky-600'/>
+              <p className='text-sky-600'>Hotels</p>
+            </div>
             {Array.from({ length: hotel.star }, (_, i) => (
               <Star key={i} className="text-yellow-400 h-4" />
             ))}
           </div>
-          <p>{hotel.city}</p>
+          <div className='flex items-center gap-2'>
+            <MapPin className='w-5 pt-1'/>
+            <p className='mt-1'>{hotel.city}</p>
+          </div>
           <div className='flex gap-2 mt-2'>
             {
               hotel.tags.map((tag, i) => {
@@ -74,7 +80,7 @@ const HotelCard = ({hotel}) => {
           <p className='text-gray-600 text-xs line-through'>Rp. {Number(hotel.old_price).toLocaleString("id-ID").replace(/,/g, ".")}</p>
           <p className='text-orange-500 font-semibold'>Rp. {Number(hotel.price).toLocaleString("id-ID").replace(/,/g, ".")}</p>
           <p className='text-gray-600 text-xs'>Exclude taxes & fees</p>
-          <Button className='mt-3 bg-orange-600 '>Select Room</Button>
+          <Button className='mt-3 bg-orange-600 hover:bg-orange-700'>Select Room</Button>
         </div>
       </CardContent>
     </Card>

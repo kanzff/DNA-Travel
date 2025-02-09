@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { CalendarIcon } from "lucide-react"
 import { addDays, format } from "date-fns"
-import { Building2, CalendarDays, Users, Search } from "lucide-react"
+import { Building2, CalendarDays, Users, Search, MapPin, Contact } from "lucide-react"
 import { DateRange } from "react-day-picker"
 import {
   Popover,
@@ -73,8 +73,9 @@ const MainSearch = ({ region }: { region?: string | null }) => {
                 variant="outline"
                 role="combobox"
                 aria-expanded={open}
-                className="justify-between w-full"
+                className="justify-start w-full"
               >
+                <MapPin className='text-sky-600'/>
                 {value
                   ? regions.find((region) => region.value === value)?.label
                   : "City, hotel, place to go"}
@@ -118,7 +119,7 @@ const MainSearch = ({ region }: { region?: string | null }) => {
                   !date && "text-muted-foreground"
                 )}
               >
-                <CalendarIcon />
+                <CalendarIcon className='text-sky-600'/>
                 {date?.from ? (
                   date.to ? (
                     <>
@@ -156,8 +157,9 @@ const MainSearch = ({ region }: { region?: string | null }) => {
                 variant="outline"
                 role="combobox"
                 aria-expanded={openRoom}
-                className="justify-between w-full"
+                className="justify-start w-full"
               >
+                <Contact className='text-sky-600'/>
                 {`${roomValue.adult} Adult(s), ${roomValue.children} Child, ${roomValue.room} Room`}
               </Button>
             </PopoverTrigger>
@@ -213,7 +215,7 @@ const MainSearch = ({ region }: { region?: string | null }) => {
         <Button 
           onClick={() => router.push(`/hotel?region=${value}`)}
           disabled={value === null || value === ""}
-          className="w-auto h-9 px-4 bg-sky-500 rounded-r-xl">
+          className="w-auto h-9 px-4 bg-sky-500 rounded-r-xl hover:bg-sky-600">
           <Search className="w-5 h-5" />
           Search Hotels
         </Button>

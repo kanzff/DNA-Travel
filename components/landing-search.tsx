@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { CalendarIcon } from "lucide-react"
 import { addDays, format } from "date-fns"
-import { Building2, CalendarDays, Users, Search } from "lucide-react"
+import { Building2, CalendarDays, Users, Search, MapPin, Contact } from "lucide-react"
 import { DateRange } from "react-day-picker"
 import {
   Popover,
@@ -33,7 +33,7 @@ const LandingSearch = () => {
   })
   const [open, setOpen] = React.useState(false)
   const [openRoom, setOpenRoom] = React.useState(false)
-  const [value, setValue] = React.useState<String>("")
+  const [value, setValue] = React.useState<String>("Jakarta")
   const [roomValue, setRoomValue] = React.useState({
     adult: 1,
     children: 0,
@@ -67,8 +67,9 @@ const LandingSearch = () => {
                       variant="outline"
                       role="combobox"
                       aria-expanded={open}
-                      className="justify-between w-full"
+                      className="justify-start w-full"
                     >
+                      <MapPin className='text-sky-600'/>
                       {value
                         ? regions.find((region) => region.value === value)?.label
                         : "City, hotel, place to go"}
@@ -113,7 +114,7 @@ const LandingSearch = () => {
                         !date && "text-muted-foreground"
                       )}
                     >
-                      <CalendarIcon />
+                      <CalendarIcon className='text-sky-600'/>
                       {date?.from ? (
                         date.to ? (
                           <>
@@ -152,8 +153,9 @@ const LandingSearch = () => {
                       variant="outline"
                       role="combobox"
                       aria-expanded={openRoom}
-                      className="justify-between w-full"
+                      className="justify-start w-full"
                     >
+                      <Contact className='text-sky-600'/>
                       {`${roomValue.adult} Adult(s), ${roomValue.children} Child, ${roomValue.room} Room`}
                     </Button>
                   </PopoverTrigger>

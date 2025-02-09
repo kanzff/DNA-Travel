@@ -31,7 +31,7 @@ export function PromotionSection() {
                   <code className="bg-gray-100 px-3 py-1 rounded">HELLOSGCAID</code>
                 </div>
               </div>
-              <Button variant="outline" size="sm" className="text-secondary border-secondary">
+              <Button variant="outline" size="sm" className="text-secondary border-secondary bg-sky-200 text-sky-700">
                 Copy
               </Button>
             </div>
@@ -48,7 +48,7 @@ export function PromotionSection() {
                   <code className="bg-gray-100 px-3 py-1 rounded">JALANYUK</code>
                 </div>
               </div>
-              <Button variant="outline" size="sm" className="text-secondary border-secondary">
+              <Button variant="outline" size="sm" className="text-secondary border-secondary bg-sky-200 text-sky-700">
                 Copy
               </Button>
             </div>
@@ -65,7 +65,7 @@ export function PromotionSection() {
                   <code className="bg-gray-100 px-3 py-1 rounded">JALANYUK</code>
                 </div>
               </div>
-              <Button variant="outline" size="sm" className="text-secondary border-secondary">
+              <Button variant="outline" size="sm" className="text-secondary border-secondary bg-sky-200 text-sky-700">
                 Copy
               </Button>
             </div>
