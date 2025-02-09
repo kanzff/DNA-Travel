@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { CalendarIcon } from "lucide-react"
 import { addDays, format } from "date-fns"
-import { Building2, CalendarDays, Users, Search, MapPin, Contact } from "lucide-react"
+import { Search, MapPin, Contact } from "lucide-react"
 import { DateRange } from "react-day-picker"
 import {
   Popover,

@@ -9,15 +9,12 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-import Image from 'next/image'
 import { Star } from 'lucide-react';
 
 import { hotels } from '../../dummy/hotels'

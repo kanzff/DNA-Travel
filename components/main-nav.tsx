@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Plane, Building2, Train, Bus, Car, MapPin, MoreHorizontal, ChevronDown } from "lucide-react"
+import {ChevronDown } from "lucide-react"
 
 export function MainNav({textColor} : {textColor?: String | undefined}) {
   return (
