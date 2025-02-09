@@ -1,6 +1,8 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
+
 import {
   Card,
   CardContent,
@@ -16,10 +18,43 @@ import { Input } from "@/components/ui/input"
 import Image from 'next/image'
 import { Star } from 'lucide-react';
 
-
+import { hotels } from '../../dummy/hotels'
 
 const Hotel = () => {
+  const [filters, setFilters] = useState({
+    star: [],
+    rating: [],
+    tags: [],
+  });
 
+  useEffect(() => {
+    console.log('ini filt', filters)
+  }, [filters])
+  // Handle checkbox change
+  const handleCheckboxChange = (category, value) => {
+    setFilters((prev) => {
+      const updated = new Set(prev[category]); // Use Set to prevent duplicates
+      updated.has(value) ? updated.delete(value) : updated.add(value);
+      return { ...prev, [category]: Array.from(updated) };
+    });
+  };
+
+  // Filter hotels based on selected filters
+  const filteredHotels = hotels.filter((hotel) => {
+    const matchesStar = filters.star.length
+      ? filters.star.includes(hotel.star.toString())
+      : true;
+
+    const matchesRating = filters.rating.length
+      ? filters.rating.some((rating) => hotel.rating >= Number(rating))
+      : true;
+
+    const matchesTags = filters.tags.length
+      ? filters.tags.some((tag) => hotel.tags.includes(tag))
+      : true;
+
+    return matchesStar && matchesRating && matchesTags;
+  });
 
   return (
     <div className='container mx-auto p-4 flex justify-center gap-4'>
@@ -50,7 +85,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("star", '5')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -66,7 +101,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+            <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("star", '4')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -97,7 +132,7 @@ const Hotel = () => {
           </CardHeader>
           <CardContent className='flex flex-col gap-2 px-4 pb-4'>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+            <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("star", '1')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -109,7 +144,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("star", '2')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -122,7 +157,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("star", '3')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -136,7 +171,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("star", '4')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -151,7 +186,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("star", '5')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -174,7 +209,7 @@ const Hotel = () => {
           </CardHeader>
           <CardContent className='flex flex-col gap-2 px-4 pb-4'>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("rating", '7')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -183,7 +218,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("rating", '8')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -192,7 +227,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("rating", '9')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -208,7 +243,7 @@ const Hotel = () => {
           </CardHeader>
           <CardContent className='flex flex-col gap-2 px-4 pb-4'>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("tags", 'pools')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -217,7 +252,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("tags", 'elevator')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -226,7 +261,7 @@ const Hotel = () => {
               </label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
+              <Checkbox id="terms" onCheckedChange={() => handleCheckboxChange("tags", 'fitness')}/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
