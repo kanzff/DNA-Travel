@@ -231,9 +231,10 @@ const Hotel = () => {
               <p>ini multi tags</p>
             </div>
             <div className='w-[200px] flex flex-col justify-end p-4 items-end'>
-              <p className='text-xs'>Value Rate</p>
-              <p className='text-orange-500'>Rp. 39.849.348</p>
-              <p>some notif</p>
+              <p className='text-xs text-green-600'>Value Rate</p>
+              <p className='text-gray-600 text-xs line-through'>Rp. 5.049.348</p>
+              <p className='text-orange-500 font-semibold'>Rp. 3.849.348</p>
+              <p className='text-gray-600 text-xs'>Exclude taxes & fees</p>
               <Button className='mt-3 bg-orange-600 '>Select Room</Button>
             </div>
           </CardContent>
