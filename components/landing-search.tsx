@@ -163,12 +163,12 @@ const LandingSearch = () => {
                       <div className="flex gap-2">
                         <button
                           onClick={() => setRoomValue(prev => ({ ...prev, adult: Math.max(1, prev.adult - 1) }))}
-                          className="px-2 py-0 rounded-md bg-gray-400">
+                          className="px-2 py-0 rounded-md bg-gray-200">
                         -</button>
                         <p className="w-4 text-center">{roomValue.adult}</p>
                         <button
                           onClick={() => setRoomValue(prev => ({ ...prev, adult: prev.adult + 1 }))}
-                          className="px-2 py-0 rounded-md bg-gray-400">
+                          className="px-2 py-0 rounded-md bg-gray-200 text-sky-500">
                         +</button>
                       </div>
                     </div>
@@ -177,12 +177,12 @@ const LandingSearch = () => {
                       <div className="flex gap-2">
                         <button
                           onClick={() => setRoomValue(prev => ({ ...prev, children: Math.max(0, prev.children - 1) }))}
-                          className=" px-2 py-0 rounded-md bg-gray-400">
+                          className=" px-2 py-0 rounded-md bg-gray-200">
                         -</button>
                         <p className="w-4 text-center">{roomValue.children}</p>
                         <button
                           onClick={() => setRoomValue(prev => ({ ...prev, children: prev.children + 1 }))}
-                          className="px-2 py-0 rounded-md bg-gray-400">
+                          className="px-2 py-0 rounded-md bg-gray-200 text-sky-500">
                         +</button>
                       </div>                  
                     </div>
@@ -191,12 +191,12 @@ const LandingSearch = () => {
                       <div className="flex gap-2">
                         <button
                           onClick={() => setRoomValue(prev => ({ ...prev, room: Math.max(1, prev.room - 1) }))}
-                          className="px-2 py-0 rounded-md bg-gray-400">
+                          className="px-2 py-0 rounded-md bg-gray-200">
                         -</button>
                         <p className="w-4 text-center">{roomValue.room}</p>
                         <button
                           onClick={() => setRoomValue(prev => ({ ...prev, room: prev.room + 1 }))}
-                          className="px-2 py-0 rounded-md bg-gray-400">
+                          className="px-2 py-0 rounded-md bg-gray-200 text-sky-500">
                         +</button>                    
                       </div>
                     </div>

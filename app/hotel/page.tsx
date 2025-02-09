@@ -69,7 +69,7 @@ const Hotel = () => {
       : true;
 
     const matchesTags = filters.tags.length
-      ? filters.tags.some((tag) => hotel.tags.includes(tag))
+      ? filters.tags.every((tag) => hotel.tags.includes(tag))
       : true;
 
     const matchesPrice =

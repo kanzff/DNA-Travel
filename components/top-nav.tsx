@@ -6,15 +6,16 @@ import { Globe, ChevronDown } from "lucide-react"
 export function TopNav({textColor, lightMode} : {textColor?: String | undefined, lightMode?: Boolean | undefined}) {
   return (
     <nav className="">
-      <div className="container mx-auto px-4 flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 flex items-center justify-center gap-24 h-16">
         <Link href="/" className="flex items-center">
-          {/* <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-07%20110004-SS7F8QUfifgXmJmlPkzJY9PF8WYajk.png"
+          <p className={`text-3xl font-semibold ${lightMode ? 'text-gray-600': 'text-slate-100'}`}>traveloka</p>
+          <Image
+            src="/traveloka.png"
             alt="Traveloka"
             width={130}
             height={40}
-            className="w-32"
-          /> */}
+            className="w-8 mb-4"
+          />
         </Link>
 
         <div className="flex items-center gap-6">
