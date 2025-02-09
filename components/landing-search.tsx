@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
@@ -25,6 +26,7 @@ import {
 import { cn } from "@/lib/utils"
 
 const LandingSearch = () => {
+  const router = useRouter()
   const [date, setDate] = React.useState<DateRange | undefined>({
     from: new Date(2022, 0, 20),
     to: addDays(new Date(2022, 0, 20), 20),
@@ -204,7 +206,10 @@ const LandingSearch = () => {
             </div>
 
             <div className="flex items-end">
-              <Button disabled={value === null || value === ""} className="w-auto h-11 px-4 bg-[#FF5E1F] hover:bg-[#FF5E1F]/90 rounded-none rounded-r-xl">
+              <Button
+                  onClick={() => router.push(`/hotel?region=${value}`)}
+                  disabled={value === null || value === ""}
+                  className="w-auto h-11 px-4 bg-[#FF5E1F] hover:bg-[#FF5E1F]/90 rounded-none rounded-r-xl">
                 <Search className="w-5 h-5" />
               </Button>
             </div>

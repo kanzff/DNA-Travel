@@ -11,33 +11,35 @@ import {
 } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
 import Image from 'next/image'
-import { useSearchParams } from 'next/navigation'
+import { Star } from 'lucide-react';
 
 
 
 const Hotel = () => {
-  // const searchParams = useSearchParams()
-  // const region = searchParams.get('region')
-  // console.log(region)
+
 
   return (
     <div className='container mx-auto p-4 flex justify-center gap-4'>
       <div className='flex flex-col gap-4'>
         <Card className="w-[250px]">
-          <CardHeader>
+          <CardHeader className='p-4'>
             <CardTitle>Price Range</CardTitle>
             <CardDescription>Per room, per night</CardDescription>
           </CardHeader>
-          <CardContent>
-            
+          <CardContent className='flex gap-2 px-4 pb-4'>
+            <Input type="text" placeholder="From" />
+            <p className=''>-</p>
+            <Input type="text" placeholder="To" />
           </CardContent>
         </Card>
         <Card className="w-[250px]">
-          <CardHeader>
+          <CardHeader className='p-4'>
             <CardTitle>Popular Filter</CardTitle>
           </CardHeader>
-          <CardContent className='flex flex-col gap-2'>
+          <CardContent className='flex flex-col gap-2 px-4 pb-4'>
             <div className="flex items-center space-x-2">
               <Checkbox id="terms" />
               <label
@@ -53,7 +55,14 @@ const Hotel = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                5 Star
+                <div className='flex items-center'>
+                  <p>5</p>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                </div>
               </label>
             </div>
             <div className="flex items-center space-x-2">
@@ -62,7 +71,13 @@ const Hotel = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                4 Star
+                <div className='flex items-center'>
+                  <p>4</p>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                </div>
               </label>
             </div>
             <div className="flex items-center space-x-2">
@@ -77,17 +92,20 @@ const Hotel = () => {
           </CardContent>
         </Card>
         <Card className="w-[250px]">
-          <CardHeader>
+          <CardHeader className='p-4'>
             <CardTitle>Star Rating</CardTitle>
           </CardHeader>
-          <CardContent className='flex flex-col gap-2'>
+          <CardContent className='flex flex-col gap-2 px-4 pb-4'>
             <div className="flex items-center space-x-2">
               <Checkbox id="terms" />
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                1 Star
+                <div className='flex items-center'>
+                  <p>1</p>
+                  <Star className='text-yellow-400 h-4'/>
+                </div>
               </label>
             </div>
             <div className="flex items-center space-x-2">
@@ -96,7 +114,11 @@ const Hotel = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                2 Star
+                <div className='flex items-center'>
+                  <p>2</p>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                </div>
               </label>
             </div>
             <div className="flex items-center space-x-2">
@@ -105,7 +127,12 @@ const Hotel = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                3 Star
+                <div className='flex items-center'>
+                  <p>3</p>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                </div>
               </label>
             </div>
             <div className="flex items-center space-x-2">
@@ -114,7 +141,13 @@ const Hotel = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                4 Star
+                <div className='flex items-center'>
+                  <p>4</p>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                </div>
               </label>
             </div>
             <div className="flex items-center space-x-2">
@@ -123,23 +156,30 @@ const Hotel = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                5 Star
+                <div className='flex items-center'>
+                  <p>5</p>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                  <Star className='text-yellow-400 h-4'/>
+                </div>
               </label>
             </div>
           </CardContent>
         </Card>
         <Card className="w-[250px]">
-          <CardHeader>
+          <CardHeader className='p-4'>
             <CardTitle>Guest Rating</CardTitle>
           </CardHeader>
-          <CardContent className='flex flex-col gap-2'>
+          <CardContent className='flex flex-col gap-2 px-4 pb-4'>
             <div className="flex items-center space-x-2">
               <Checkbox id="terms" />
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                7+ Convinient
+                <span className='text-sky-500 font-bold'>7+ </span>Convinient
               </label>
             </div>
             <div className="flex items-center space-x-2">
@@ -148,7 +188,7 @@ const Hotel = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                8+ Impressive
+                <span className='text-sky-500 font-bold'>8+ </span>Impressive
               </label>
             </div>
             <div className="flex items-center space-x-2">
@@ -157,16 +197,16 @@ const Hotel = () => {
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                9+ Superb
+                <span className='text-sky-500 font-bold'>9+ </span>Superb
               </label>
             </div>
           </CardContent>
         </Card>
         <Card className="w-[250px]">
-          <CardHeader>
+          <CardHeader className='p-4'>
             <CardTitle>Popular Facilities</CardTitle>
           </CardHeader>
-          <CardContent className='flex flex-col gap-2'>
+          <CardContent className='flex flex-col gap-2 px-4 pb-4'>
             <div className="flex items-center space-x-2">
               <Checkbox id="terms" />
               <label
@@ -199,7 +239,7 @@ const Hotel = () => {
       </div>
       <div className='flex flex-col gap-4'>
         <Card className="w-[900px] p-0">
-          <CardContent className='flex justify-between p-0'>
+          <CardContent className='flex justify-between p-0 '>
             <div className='w-auto'>
               <Image
                 className='rounded-tl-lg mb-0.5'
