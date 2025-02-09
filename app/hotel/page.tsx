@@ -12,9 +12,15 @@ import {
 import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
+import { useSearchParams } from 'next/navigation'
+
 
 
 const Hotel = () => {
+  // const searchParams = useSearchParams()
+  // const region = searchParams.get('region')
+  // console.log(region)
+
   return (
     <div className='container mx-auto p-4 flex justify-center gap-4'>
       <div className='flex flex-col gap-4'>
@@ -72,40 +78,6 @@ const Hotel = () => {
         </Card>
         <Card className="w-[250px]">
           <CardHeader>
-            <CardTitle>Promo & Discount</CardTitle>
-          </CardHeader>
-          <CardContent className='flex flex-col gap-2'>
-            <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
-              <label
-                htmlFor="terms"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Promo for You
-              </label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
-              <label
-                htmlFor="terms"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Extra Benefit
-              </label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
-              <label
-                htmlFor="terms"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Promo Domestik
-              </label>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="w-[250px]">
-          <CardHeader>
             <CardTitle>Star Rating</CardTitle>
           </CardHeader>
           <CardContent className='flex flex-col gap-2'>
@@ -152,6 +124,40 @@ const Hotel = () => {
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
                 5 Star
+              </label>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="w-[250px]">
+          <CardHeader>
+            <CardTitle>Guest Rating</CardTitle>
+          </CardHeader>
+          <CardContent className='flex flex-col gap-2'>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                7+ Convinient
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                8+ Impressive
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="terms" />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                9+ Superb
               </label>
             </div>
           </CardContent>

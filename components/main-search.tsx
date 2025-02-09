@@ -1,6 +1,8 @@
 'use client'
 
 import React from 'react'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
@@ -24,7 +26,9 @@ import {
  
 import { cn } from "@/lib/utils"
 
-const MainSearch = () => {
+const MainSearch = ({ region }: { region?: string | null }) => {
+  const router = useRouter()
+
   const [date, setDate] = React.useState<DateRange | undefined>({
     from: new Date(2022, 0, 20),
     to: addDays(new Date(2022, 0, 20), 20),
@@ -37,6 +41,11 @@ const MainSearch = () => {
     children: 0,
     room: 1
   })
+
+  useEffect(() => {
+    if (!!region) setValue(region)
+  }, [])
+  
 
   const regions = [
     {
@@ -201,7 +210,10 @@ const MainSearch = () => {
       </div>
 
       <div className="flex items-center">
-        <Button disabled={value === null || value === ""} className="w-auto h-9 px-4 bg-sky-500 rounded-r-xl">
+        <Button 
+          onClick={() => router.push(`/hotel?region=${value}`)}
+          disabled={value === null || value === ""}
+          className="w-auto h-9 px-4 bg-sky-500 rounded-r-xl">
           <Search className="w-5 h-5" />
           Search Hotels
         </Button>
