@@ -6,10 +6,10 @@ export const hotels = [
         star: 5,
         old_price: '3400000',
         price: '2500000',
-        tags: ['pool', 'elevator']
+        tags: ['pools', 'elevator']
     },
     {
-        name: "Hotel Indonesia Kempinski Jakarta",
+        name: "Manhattan Hotel",
         city: "Bandung",
         rating: 9,
         star: 4,
@@ -18,7 +18,7 @@ export const hotels = [
         tags: ['elevator']
     },
     {
-        name: "Hotel Indonesia Kempinski Jakarta",
+        name: "Grand Melia",
         city: "Malang",
         rating: 7,
         star: 3,

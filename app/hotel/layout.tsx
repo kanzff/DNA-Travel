@@ -21,13 +21,15 @@ export default function HotelLayout({
       <body>
         {/* Layout UI */}
         {/* Place children where you want to render a page or nested layout */}
-        <div className="min-h-screen">
-          <TopNav lightMode={true} />
-          <MainNav textColor={'text-gray-500'}/>
-          <div className="p-6 max-w-5xl mx-auto">
-            <MainSearch region={region}/>
+        <div className="min-h-screen bg-slate-100">
+          <div className="bg-white">
+            <TopNav lightMode={true} />
+            <MainNav textColor={'text-gray-500'}/>
+            <div className="p-6 max-w-5xl mx-auto">
+              <MainSearch region={region}/>
+            </div>
           </div>
-          <main className="bg-slate-100">{children}</main>
+          <main >{children}</main>
         </div>
       </body>
     </html>
