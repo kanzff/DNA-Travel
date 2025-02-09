@@ -39,11 +39,21 @@ const Hotel = () => {
   }, [filters])
 
   // Handle checkbox change
+  // const handleCheckboxChange = (category, value) => {
+  //   setFilters((prev) => {
+  //     const updated = new Set(prev[category]); // Use Set to prevent duplicates
+  //     updated.has(value) ? updated.delete(value) : updated.add(value);
+  //     return { ...prev, [category]: Array.from(updated) };
+  //   });
+  // };
+
   const handleCheckboxChange = (category, value) => {
     setFilters((prev) => {
-      const updated = new Set(prev[category]); // Use Set to prevent duplicates
-      updated.has(value) ? updated.delete(value) : updated.add(value);
-      return { ...prev, [category]: Array.from(updated) };
+      const updated = prev[category].includes(value)
+        ? prev[category].filter((item) => item !== value) // Remove value if it exists
+        : [...prev[category], value]; // Add value if not present
+  
+      return { ...prev, [category]: updated };
     });
   };
 
