@@ -26,11 +26,14 @@ const Hotel = () => {
     star: [],
     rating: [],
     tags: [],
+    minPrice: "",
+    maxPrice: ""
   });
 
   useEffect(() => {
     console.log('ini filt', filters)
   }, [filters])
+
   // Handle checkbox change
   const handleCheckboxChange = (category, value) => {
     setFilters((prev) => {
@@ -38,6 +41,14 @@ const Hotel = () => {
       updated.has(value) ? updated.delete(value) : updated.add(value);
       return { ...prev, [category]: Array.from(updated) };
     });
+  };
+
+  const handlePriceChange = (e) => {
+    const { name, value } = e.target;
+    setFilters((prev) => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   // Filter hotels based on selected filters
@@ -54,7 +65,11 @@ const Hotel = () => {
       ? filters.tags.some((tag) => hotel.tags.includes(tag))
       : true;
 
-    return matchesStar && matchesRating && matchesTags;
+    const matchesPrice =
+      (!filters.minPrice || Number(hotel.price) >= Number(filters.minPrice)) &&
+      (!filters.maxPrice || Number(hotel.price) <= Number(filters.maxPrice));
+    
+    return matchesStar && matchesRating && matchesTags && matchesPrice;
   });
 
   return (
@@ -66,9 +81,19 @@ const Hotel = () => {
             <CardDescription>Per room, per night</CardDescription>
           </CardHeader>
           <CardContent className='flex gap-2 px-4 pb-4'>
-            <Input type="text" placeholder="From" />
+            <Input 
+              value={filters.minPrice}
+              onChange={handlePriceChange}
+              type="text"
+              name="minPrice"
+              placeholder="From" />
             <p className=''>-</p>
-            <Input type="text" placeholder="To" />
+            <Input 
+              value={filters.maxPrice}
+              onChange={handlePriceChange}
+              type="text"
+              name="maxPrice"
+              placeholder="To" />
           </CardContent>
         </Card>
         {/* <Card className="w-[250px]">
@@ -273,7 +298,7 @@ const Hotel = () => {
           </CardContent>
         </Card>
       </div>
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-4 min-w-[1000px]'>
         {
           filteredHotels.map((hotel, i) => {
             return (

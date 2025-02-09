@@ -71,8 +71,8 @@ const HotelCard = ({hotel}) => {
         </div>
         <div className='w-[200px] flex flex-col justify-end p-4 items-end'>
           <p className='text-xs text-green-600'>Value Rate</p>
-          <p className='text-gray-600 text-xs line-through'>Rp. {hotel.old_price}</p>
-          <p className='text-orange-500 font-semibold'>Rp. {hotel.price}</p>
+          <p className='text-gray-600 text-xs line-through'>Rp. {Number(hotel.old_price).toLocaleString("id-ID").replace(/,/g, ".")}</p>
+          <p className='text-orange-500 font-semibold'>Rp. {Number(hotel.price).toLocaleString("id-ID").replace(/,/g, ".")}</p>
           <p className='text-gray-600 text-xs'>Exclude taxes & fees</p>
           <Button className='mt-3 bg-orange-600 '>Select Room</Button>
         </div>
