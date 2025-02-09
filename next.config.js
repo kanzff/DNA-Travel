@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+module.exports = {
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -9,5 +8,3 @@ const nextConfig: NextConfig = {
     missingSuspenseWithCSRBailout: false,
   },
 };
-
-export default nextConfig;

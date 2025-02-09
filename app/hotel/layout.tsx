@@ -5,7 +5,6 @@ import MainSearch from "@/components/main-search"
 import { TopNav } from "@/components/top-nav"
 
 import { useSearchParams } from 'next/navigation'
-import { Suspense } from "react";
 
 
 
@@ -18,8 +17,7 @@ export default function HotelLayout({
   const region = searchParams.get('region')
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
         <body>
           {/* Layout UI */}
           {/* Place children where you want to render a page or nested layout */}
@@ -35,6 +33,5 @@ export default function HotelLayout({
           </div>
         </body>
       </html>
-    </Suspense>
   )
 }
