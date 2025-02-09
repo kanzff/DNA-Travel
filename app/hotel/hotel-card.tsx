@@ -19,10 +19,10 @@ const HotelCard = ({hotel}) => {
       <CardContent className='flex justify-between p-0 '>
         <div className='w-auto'>
           <Image
-            className='rounded-tl-lg mb-0.5'
+            className='rounded-tl-lg mb-0.5 w-[309px] h-[200px]'
             width={309}
             height={200}
-            src={'/hotel-1.jpeg'}
+            src={hotel.image}
             alt='hotel'
           />
           <div className='flex gap-0.5'>
